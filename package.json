@@ -8,6 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "tsc",
     "start": "nodemon --ext ts,json --exec 'node --loader ts-node/esm src/index.ts'",
+    "dev": "node --import ./scripts/register.js --watch src/index.ts",
     "generate": "graphql-codegen",
     "prisma": "prisma"
   },
