@@ -1,0 +1,71 @@
+type Movie {
+    id: ID!
+    title: String!
+    original_title: String!
+    original_title_romanised: String!
+    description: String!
+    director: String!
+    producer: String!
+    release_date: String!
+    running_time: String!
+    rt_score: String!
+    people: [String!]!
+    species: [String!]!
+    locations: [String!]!
+    vehicles: [String!]!
+    url: String!
+}
+type People {
+    id: ID!
+    name: String!
+    gender: String!
+    eye_color: String!
+    hair_color: String!
+    films: [String!]!
+    species: [String!]!
+    url: String!
+}
+type Species {
+    id: ID!
+    name: String!
+    classification: String!
+    eye_colors: String!
+    hair_colors: String!
+    films: [String!]!
+    people: [String!]!
+    url: String!
+}
+
+type Location {
+    id: ID!
+    name: String!
+    climate: String!
+    terrain: String!
+    surface_water: String!
+    films: [String!]!
+    url: String!
+}
+
+type Vehicle {
+    id: ID!
+    name: String!
+    description: String!
+    vehicle_class: String!
+    length: String!
+    pilot: [String!]!
+    films: [String!]!
+    url: String!
+}
+
+type Query {
+    allMovies: [Movie!]!
+    movie(id: ID!): Movie
+    allPeople: [People!]!
+    person(id: ID!): People
+    allSpecies: [Species!]!
+    species(id: ID!): Species
+    allLocations: [Location!]!
+    location(id: ID!): Location
+    allVehicles: [Vehicle!]!
+    vehicle(id: ID!): Vehicle
+}
